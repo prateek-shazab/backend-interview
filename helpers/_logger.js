@@ -16,7 +16,7 @@ const LOGGING_LEVELS = Object.keys(winston.config.syslog.levels).reduce(
   }),
   {}
 );
-const LOG_FILE_PATH = process.env.LOG_PATH;
+const { LOG_PATH } = process.env;
 
 const WinFormat = winston.format;
 const WinTransports = winston.transports;
@@ -63,21 +63,21 @@ const logger = winston.createLogger({
     // ** error
     new WinTransports.DailyRotateFile({
       ...COMMON_CONFIG,
-      filename: path.join(LOG_FILE_PATH, 'error-%DATE%.log'),
+      filename: path.join(LOG_PATH, 'error-%DATE%.log'),
       format: logFormat([LOGGING_LEVELS.error]),
       level: LOGGING_LEVELS.error,
     }),
     // ** warning
     new WinTransports.DailyRotateFile({
       ...COMMON_CONFIG,
-      filename: path.join(LOG_FILE_PATH, 'warning-%DATE%.log'),
+      filename: path.join(LOG_PATH, 'warning-%DATE%.log'),
       format: logFormat([LOGGING_LEVELS.warning]),
       level: LOGGING_LEVELS.warning,
     }),
     // ** debug => debug + info logs
     new WinTransports.DailyRotateFile({
       ...COMMON_CONFIG,
-      filename: path.join(LOG_FILE_PATH, 'debug-%DATE%.log'),
+      filename: path.join(LOG_PATH, 'debug-%DATE%.log'),
       format: logFormat([LOGGING_LEVELS.debug, LOGGING_LEVELS.info]),
       level: LOGGING_LEVELS.debug,
     }),
@@ -90,13 +90,13 @@ const logger = winston.createLogger({
   exceptionHandlers: [
     new WinTransports.DailyRotateFile({
       ...COMMON_CONFIG,
-      filename: path.join(LOG_FILE_PATH, 'exception-%DATE%.log'),
+      filename: path.join(LOG_PATH, 'exception-%DATE%.log'),
     }),
   ],
   rejectionHandlers: [
     new WinTransports.DailyRotateFile({
       ...COMMON_CONFIG,
-      filename: path.join(LOG_FILE_PATH, 'rejection-%DATE%.log'),
+      filename: path.join(LOG_PATH, 'rejection-%DATE%.log'),
     }),
   ],
 });

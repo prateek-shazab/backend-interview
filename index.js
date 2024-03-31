@@ -1,6 +1,6 @@
 const express = require('express');
 
-const logger = require('./helpers/Logger');
+const logger = require('./helpers/_logger');
 const { API_BASE, PORT } = require('./scripts/constants');
 
 // ** Routes
