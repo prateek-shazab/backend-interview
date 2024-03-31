@@ -1,6 +1,8 @@
+const logger = require('../helpers/Logger');
+
 class UserService {
   constructor() {
-    console.log('UserService');
+    logger.info('UserService');
   }
 
   async getUserList() {
