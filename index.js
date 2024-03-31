@@ -4,7 +4,7 @@ const logger = require('./helpers/_logger');
 const { API_BASE, PORT } = require('./scripts/constants');
 
 // ** Routes
-const UserRoutes = require('./routes/UserRoutes');
+const { UserRoutes } = require('./routes');
 
 const webApp = express();
 
