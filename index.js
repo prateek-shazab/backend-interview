@@ -1,3 +1,5 @@
+require('./helpers/db');
+
 const express = require('express');
 
 const logger = require('./helpers/logger');
