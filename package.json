@@ -10,7 +10,11 @@
   "author": "Anmol Khurana",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "nodemon": "^3.1.0"
+    "mongoose": "^6.9.0",
+    "nodemon": "^3.1.0",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0"
   }
 }
