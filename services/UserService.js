@@ -1,4 +1,4 @@
-const logger = require('../helpers/_logger');
+const logger = require('../helpers/logger');
 
 class UserService {
   constructor() {
