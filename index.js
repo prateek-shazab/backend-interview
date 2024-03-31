@@ -3,7 +3,7 @@ const express = require('express');
 const { API_BASE, PORT } = require('./scripts/constants');
 
 // ** Routes
-const userRoutes = require('./routes/UserRoutes');
+const userRoutes = require('./routes/_UserRoutes');
 
 const webApp = express();
 
