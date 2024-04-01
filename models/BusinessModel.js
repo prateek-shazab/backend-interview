@@ -5,6 +5,7 @@ const { Schema, model } = mongoose;
 
 const BusinessSchema = new Schema(
   {
+    _id: { type: Number },
     businessName: { type: String },
   },
   {
