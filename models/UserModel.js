@@ -6,7 +6,8 @@ const { ObjectId } = Schema.Types;
 
 const UserSchema = new Schema(
   {
-    businessId: { type: ObjectId, ref: 'BusinessMaster' },
+    _id: { type: Number },
+    businessId: { type: Number, ref: 'BusinessMaster' },
     firstName: { type: String },
     lastName: { type: String },
   },
