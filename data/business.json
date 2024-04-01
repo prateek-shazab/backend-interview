@@ -1,0 +1,22 @@
+[
+  {
+    "businessName": "Space, Ltd.",
+    "_id": 1
+  },
+  {
+    "businessName": "Consumer Electronics Co.",
+    "_id": 2
+  },
+  {
+    "businessName": "Dairy Co.",
+    "_id": 3
+  },
+  {
+    "businessName": "Computer Games, Ltd.",
+    "_id": 4
+  },
+  {
+    "businessName": "Accounting, LLC",
+    "_id": 5
+  }
+]
