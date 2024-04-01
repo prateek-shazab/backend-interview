@@ -1,4 +1,5 @@
 const logger = require('../helpers/logger');
+const { UserModel } = require('../models');
 
 class UserService {
   constructor() {
@@ -6,7 +7,7 @@ class UserService {
   }
 
   async getUserList() {
-    return [{ message: 'List of users' }];
+    return UserModel.find({});
   }
 }
 
