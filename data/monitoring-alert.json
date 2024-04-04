@@ -1,0 +1,26 @@
+[
+  {
+    "_id": 1,
+    "comments": "Message - 1. Severity is 'Low'",
+    "severity": 4,
+    "type": "MONITORING_ALERT"
+  },
+  {
+    "_id": 2,
+    "comments": "Message - 2. Severity is 'Medium'",
+    "severity": 5,
+    "type": "MONITORING_ALERT"
+  },
+  {
+    "_id": 3,
+    "comments": "Message - 3. Severity is 'High'",
+    "severity": 6,
+    "type": "MONITORING_ALERT"
+  },
+  {
+    "_id": 8,
+    "comments": "Message - 4. Severity is 'High'",
+    "severity": 6,
+    "type": "MONITORING_ALERT"
+  }
+]

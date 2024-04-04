@@ -1,0 +1,22 @@
+[
+  {
+    "_id": 4,
+    "label": "Low",
+    "type": "MONITORING_ALERT_SEVERITY"
+  },
+  {
+    "_id": 5,
+    "label": "Medium",
+    "type": "MONITORING_ALERT_SEVERITY"
+  },
+  {
+    "_id": 6,
+    "label": "High",
+    "type": "MONITORING_ALERT_SEVERITY"
+  },
+  {
+    "_id": 7,
+    "label": "Immediate",
+    "type": "MONITORING_ALERT_SEVERITY"
+  }
+]

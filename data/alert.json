@@ -1,0 +1,22 @@
+[
+  {
+    "_id": 1,
+    "type": 1,
+    "message": "Device inactive. Severity is 'Low'"
+  },
+  {
+    "_id": 2,
+    "type": 2,
+    "message": "No response. Severity is 'Medium'"
+  },
+  {
+    "_id": 3,
+    "type": 2,
+    "message": "High ping loss. Severity is 'Medium'"
+  },
+  {
+    "_id": 4,
+    "type": 3,
+    "message": "No ICMP response. Severity is 'High'"
+  }
+]
