@@ -2,8 +2,8 @@ const { SetupService } = require('../services');
 
 const setupServiceCRUD = new SetupService();
 
-const setupDB = async (_, res) => {
-  const data = await setupServiceCRUD.setupDB();
+const setupDB = async (req, res) => {
+  const data = await setupServiceCRUD.setupDB(req.query);
   return res.send(data);
 };
 

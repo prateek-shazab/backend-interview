@@ -1,30 +1,88 @@
 // ** Models
-const { BusinessModel, UserModel } = require('../models');
+const {
+  AlertModel,
+  BusinessModel,
+  MonitoringAlertLookup,
+  MonitoringAlertSeverityLookup,
+  UserModel,
+} = require('../models');
 
 // ** Data
+const ALERTS = require('../data/alert.json');
 const BUSINESSES = require('../data/business.json');
+const MONITORING_ALERTS = require('../data/monitoring-alert.json');
+const MONITORING_ALERT_SEVERITY = require('../data/monitoring-alert-severity.json');
 const USERS = require('../data/user.json');
 
 // ** Helpers
 const logger = require('../helpers/logger');
+
+const CONFIG = [
+  {
+    model: AlertModel,
+    data: ALERTS,
+  },
+  {
+    model: BusinessModel,
+    data: BUSINESSES,
+  },
+  {
+    model: MonitoringAlertLookup,
+    data: MONITORING_ALERTS,
+    filter: { type: 'MONITORING_ALERT' },
+  },
+  {
+    model: MonitoringAlertSeverityLookup,
+    data: MONITORING_ALERT_SEVERITY,
+    filter: { type: 'MONITORING_ALERT_SEVERITY' },
+  },
+  {
+    model: UserModel,
+    data: USERS,
+  },
+];
 
 class SetupService {
   constructor() {
     logger.info('SetupService');
   }
 
-  async setupDB() {
+  async setupDB(query = {}) {
+    const shouldFindAllData = Boolean(query.find);
+
     // ** Delete data from DB
-    const deleteResponse = await Promise.all([
-      BusinessModel.deleteMany({}),
-      UserModel.deleteMany({}),
-    ]);
+    const deleteResponse = await Promise.all(
+      shouldFindAllData
+        ? []
+        : CONFIG.map(async (useConfig) => {
+            const { filter = {}, model } = useConfig;
+            const res = await model.deleteMany(filter);
+            return {
+              [model.modelName]: res,
+            };
+          })
+    );
     // ** Add data to DB
-    const addResponse = await Promise.all([
-      BusinessModel.insertMany(BUSINESSES),
-      UserModel.insertMany(USERS),
-    ]);
-    return [deleteResponse, addResponse];
+    const addOrFindResponse = await Promise.all(
+      shouldFindAllData
+        ? CONFIG.map(async (useConfig) => {
+            const { filter = {}, model } = useConfig;
+            const res = await model.find(filter);
+            return {
+              [model.modelName]: res,
+              findCount: res.length,
+            };
+          })
+        : CONFIG.map(async (useConfig) => {
+            const { data, model } = useConfig;
+            const res = await model.insertMany(data);
+            return {
+              [model.modelName]: res,
+              insertCount: res.length,
+            };
+          })
+    );
+    return [deleteResponse, addOrFindResponse];
   }
 }
 
