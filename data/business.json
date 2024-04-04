@@ -1,22 +1,22 @@
 [
   {
-    "businessName": "Space, Ltd.",
-    "_id": 1
+    "_id": 1,
+    "businessName": "Space, Ltd."
   },
   {
-    "businessName": "Consumer Electronics Co.",
-    "_id": 2
+    "_id": 2,
+    "businessName": "Consumer Electronics Co."
   },
   {
-    "businessName": "Dairy Co.",
-    "_id": 3
+    "_id": 3,
+    "businessName": "Dairy Co."
   },
   {
-    "businessName": "Computer Games, Ltd.",
-    "_id": 4
+    "_id": 4,
+    "businessName": "Computer Games, Ltd."
   },
   {
-    "businessName": "Accounting, LLC",
-    "_id": 5
+    "_id": 5,
+    "businessName": "Accounting, LLC"
   }
 ]
