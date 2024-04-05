@@ -15,6 +15,8 @@ const LOOKUP_TYPE = {
 const MODEL_NAME = {
   AlertModel: 'AlertModel',
   BusinessModel: 'BusinessModel',
+  MonitoringAlertModel: 'MonitoringAlertModel',
+  MonitoringAlertSeverityModel: 'MonitoringAlertSeverityModel',
   UserModel: 'UserModel',
 };
 

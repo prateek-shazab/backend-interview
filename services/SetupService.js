@@ -2,8 +2,8 @@
 const {
   AlertModel,
   BusinessModel,
-  MonitoringAlertLookup,
-  MonitoringAlertSeverityLookup,
+  MonitoringAlertModel,
+  MonitoringAlertSeverityModel,
   UserModel,
 } = require('../models');
 
@@ -27,12 +27,12 @@ const CONFIG = [
     data: BUSINESSES,
   },
   {
-    model: MonitoringAlertLookup,
+    model: MonitoringAlertModel,
     data: MONITORING_ALERTS,
     filter: { type: 'MONITORING_ALERT' },
   },
   {
-    model: MonitoringAlertSeverityLookup,
+    model: MonitoringAlertSeverityModel,
     data: MONITORING_ALERT_SEVERITY,
     filter: { type: 'MONITORING_ALERT_SEVERITY' },
   },

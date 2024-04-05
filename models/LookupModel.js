@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // ** Constants
-const { LOOKUP_TYPE, COLLECTION_NAME } = require('../scripts/constants');
+const { COLLECTION_NAME, LOOKUP_TYPE, MODEL_NAME } = require('../scripts/constants');
 
 // ** Local constants
 const { Schema, model } = mongoose;
@@ -30,7 +30,7 @@ const MASchema = new Schema(
     _id: { type: Number },
     type: { type: String, default: LOOKUP_TYPE.MONITORING_ALERT },
     // ===== =====
-    severity: { type: Number, ref: 'MonitoringAlertSeverityLookup' },
+    severity: { type: Number, ref: 'MonitoringAlertSeverityModel' },
   },
   {
     timestamps: true,
@@ -38,10 +38,10 @@ const MASchema = new Schema(
   }
 );
 
-const MALookup = model('MonitoringAlertLookup', MASchema);
-const MASeverityLookup = model('MonitoringAlertSeverityLookup', MASeveritySchema);
+const MAModel = model(MODEL_NAME.MonitoringAlertModel, MASchema);
+const MASeverityModel = model(MODEL_NAME.MonitoringAlertSeverityModel, MASeveritySchema);
 
 module.exports = {
-  MonitoringAlertLookup: MALookup,
-  MonitoringAlertSeverityLookup: MASeverityLookup,
+  MonitoringAlertModel: MAModel,
+  MonitoringAlertSeverityModel: MASeverityModel,
 };

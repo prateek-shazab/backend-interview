@@ -1,5 +1,5 @@
 // ** Models
-const { AlertModel, MonitoringAlertSeverityLookup } = require('../models');
+const { AlertModel, MonitoringAlertSeverityModel } = require('../models');
 
 // ** Helpers
 const logger = require('../helpers/logger');

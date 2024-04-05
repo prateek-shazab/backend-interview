@@ -9,7 +9,7 @@ const AlertSchema = new Schema(
   {
     _id: { type: Number },
     message: { type: String, default: '' },
-    type: { type: Number, ref: 'MonitoringAlertLookup' },
+    type: { type: Number, ref: 'MonitoringAlertModel' },
   },
   {
     timestamps: true,
