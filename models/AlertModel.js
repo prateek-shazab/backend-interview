@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const { COLLECTION_NAME, MODEL_NAME } = require('../scripts/constants');
+
 // ** Local constants
 const { Schema, model } = mongoose;
 
@@ -11,8 +13,8 @@ const AlertSchema = new Schema(
   },
   {
     timestamps: true,
-    collection: 'AlertMaster',
+    collection: COLLECTION_NAME.AlertMaster,
   }
 );
 
-module.exports = model('AlertMaster', AlertSchema);
+module.exports = model(MODEL_NAME.AlertModel, AlertSchema);
