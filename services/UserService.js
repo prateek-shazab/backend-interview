@@ -15,7 +15,8 @@ class UserService {
   async getUserList() {
     return UserModel.find({})
       .populate(USER_LIST_POP_DEF)
-      .limit(USER_LIST_LIMIT);
+      .limit(USER_LIST_LIMIT)
+      .sort({ lastName: 1 });
   }
 }
 
