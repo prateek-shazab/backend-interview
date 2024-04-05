@@ -10,11 +10,11 @@ class AlertService {
   }
 
   async getAlertCountViaAlerts() {
-    return [{ message: 'List via alerts' }];
+    return [{ message: 'Count via alerts' }];
   }
 
   async getAlertCountViaLookup() {
-    return [{ message: 'List via lookup' }];
+    return [{ message: 'Count via lookup' }];
   }
 }
 
