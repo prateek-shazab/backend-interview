@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 // ** Local constants
 const { Schema, model } = mongoose;
-const { ObjectId } = Schema.Types;
 
 const UserSchema = new Schema(
   {
