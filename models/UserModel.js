@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+// ** Constants
+const { COLLECTION_NAME, MODEL_NAME } = require('../scripts/constants');
+
 // ** Local constants
 const { Schema, model } = mongoose;
 
@@ -10,7 +13,7 @@ const UserSchema = new Schema(
     firstName: { type: String },
     lastName: { type: String },
   },
-  { timestamps: true, collection: 'UserMaster' }
+  { timestamps: true, collection: COLLECTION_NAME.UserMaster }
 );
 
-module.exports = model('UserMaster', UserSchema);
+module.exports = model(MODEL_NAME.UserModel, UserSchema);

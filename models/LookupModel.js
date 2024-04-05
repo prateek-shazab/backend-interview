@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const { LOOKUP_TYPE } = require('../scripts/constants');
+// ** Constants
+const { LOOKUP_TYPE, COLLECTION_NAME } = require('../scripts/constants');
 
 // ** Local constants
 const { Schema, model } = mongoose;
@@ -19,7 +20,7 @@ const MASeveritySchema = new Schema(
   },
   {
     timestamps: true,
-    collection: 'LookupMaster',
+    collection: COLLECTION_NAME.LookupMaster,
   }
 );
 
@@ -33,7 +34,7 @@ const MASchema = new Schema(
   },
   {
     timestamps: true,
-    collection: 'LookupMaster',
+    collection: COLLECTION_NAME.LookupMaster,
   }
 );
 

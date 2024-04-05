@@ -2,6 +2,9 @@ const API_BASE = '/api';
 
 const COLLECTION_NAME = {
   AlertMaster: 'AlertMaster',
+  BusinessMaster: 'BusinessMaster',
+  LookupMaster: 'LookupMaster',
+  UserMaster: 'UserMaster',
 };
 
 const LOOKUP_TYPE = {
@@ -11,6 +14,8 @@ const LOOKUP_TYPE = {
 
 const MODEL_NAME = {
   AlertModel: 'AlertModel',
+  BusinessModel: 'BusinessModel',
+  UserModel: 'UserModel',
 };
 
 const PORT = 8089;
