@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const { LOOKUP_TYPE } = require('../scripts/constants');
+
 // ** Local constants
 const { Schema, model } = mongoose;
 
@@ -7,7 +9,7 @@ const { Schema, model } = mongoose;
 const MASeveritySchema = new Schema(
   {
     _id: { type: Number },
-    type: { type: String, default: 'MONITORING_ALERT_SEVERITY' },
+    type: { type: String, default: LOOKUP_TYPE.MONITORING_ALERT_SEVERITY },
     // ===== =====
     label: {
       type: String,
@@ -25,7 +27,7 @@ const MASeveritySchema = new Schema(
 const MASchema = new Schema(
   {
     _id: { type: Number },
-    type: { type: String, default: 'MONITORING_ALERT' },
+    type: { type: String, default: LOOKUP_TYPE.MONITORING_ALERT },
     // ===== =====
     severity: { type: Number, ref: 'MonitoringAlertSeverityLookup' },
   },
