@@ -9,7 +9,7 @@ const { Schema, model } = mongoose;
 const UserSchema = new Schema(
   {
     _id: { type: Number },
-    businessId: { type: Number, ref: 'BusinessMaster' },
+    businessId: { type: Number, ref: MODEL_NAME.BusinessModel },
     firstName: { type: String },
     lastName: { type: String },
   },

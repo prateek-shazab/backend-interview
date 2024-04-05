@@ -30,7 +30,7 @@ const MASchema = new Schema(
     _id: { type: Number },
     type: { type: String, default: LOOKUP_TYPE.MONITORING_ALERT },
     // ===== =====
-    severity: { type: Number, ref: 'MonitoringAlertSeverityModel' },
+    severity: { type: Number, ref: MODEL_NAME.MonitoringAlertSeverityModel },
   },
   {
     timestamps: true,
